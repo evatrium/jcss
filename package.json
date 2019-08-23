@@ -1,0 +1,35 @@
+{
+	"name": "@iosio/jcss",
+	"version": "0.0.1",
+	"description": "custom babel plugin for template string css autoprefixing and minifying",
+	"main": "index.js",
+	"publishConfig": {
+		"access": "public"
+	},
+	"license": "MIT",
+	"files": [
+		"index.js"
+	],
+	"keywords": [
+		"template",
+		"litteral",
+		"css",
+		"minify",
+		"autoprefix"
+	],
+	"scripts": {
+		"example": "./node_modules/.bin/babel example/input/styles.js --out-dir example/output",
+		"test": "echo \"Error: no test specified\" && exit 1",
+		"build": "echo \"no build script\""
+	},
+	"dependencies": {
+		"autoprefixer": "^9.6.1",
+		"clean-css": "^4.2.1",
+		"postcss": "^7.0.17",
+		"postcss-flexbugs-fixes": "^4.1.0"
+	},
+	"devDependencies": {
+		"@babel/cli": "^7.5.5",
+		"@babel/core": "^7.5.5"
+	}
+}
