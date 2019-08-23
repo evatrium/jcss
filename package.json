@@ -1,5 +1,5 @@
 {
-	"name": "@iosio/jcss",
+	"name": "@iosio/babel-plugin-jcss",
 	"version": "0.0.2",
 	"description": "custom babel plugin for template string css autoprefixing and minifying",
 	"main": "index.js",
