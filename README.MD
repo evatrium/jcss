@@ -1,13 +1,13 @@
-# @iosio/jcss
+# @iosio/babel-plugin-jcss
 
-<img src="https://img.shields.io/npm/v/@iosio/jcss.svg?style=flat-square"/>
+<img src="https://img.shields.io/npm/v/@iosio/babel-plugin-jcss.svg?style=flat-square"/>
 
 > custom babel plugin for template string css autoprefixing and minifying
 
 ## Installation 
 
 ```sh
-npm install @iosio/jcss --save-dev
+npm install @iosio/babel-plugin-jcss --save-dev
 ```
 ## Usage
 
@@ -16,7 +16,7 @@ Include the following in your babelrc or babel.config.js file
 ```json
 {
   "plugins":[
-    ["@iosio/jcss"]
+    ["@iosio/babel-plugin-jcss"]
   ]
 }
 ```
