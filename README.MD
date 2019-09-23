@@ -13,12 +13,18 @@ npm install @iosio/babel-plugin-jcss --save-dev
 
 Include the following in your babelrc or babel.config.js file
 
-```json
-{
+```js
+module.exports = {
   "plugins":[
-    ["@iosio/babel-plugin-jcss"]
+    [
+        "@iosio/babel-plugin-jcss",
+         {
+             "browsers": ["last 2 versions"], //overrides
+             "postCssOptions":  {}
+         }
+     ]
   ]
-}
+};
 ```
 
 Babel will look for the tag 'jcss' with a tagged string, run the post css and minifying and remove the tag

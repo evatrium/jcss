@@ -8,6 +8,7 @@
 const postcss = require('postcss');
 var flexBubFixes = require('postcss-flexbugs-fixes');
 const autoprefixer = require('autoprefixer')
+const postcssPresetEnv = require('postcss-preset-env');
 const CleanCSS = require('clean-css');
 
 const cleanCSS = new CleanCSS({
@@ -115,7 +116,7 @@ module.exports = function ({types: t}) {
                 let postCssOpts = Object.assign(
                     {},
                     {from: file.opts.filename},
-                    opts.options
+                    opts.postCssOptions
                 );
 
                 if (path.node.tag.name !== opts.tag) return;
@@ -132,9 +133,17 @@ module.exports = function ({types: t}) {
                     return acc + quasi.value.raw + expr;
                 }, '');
 
-                // let pluginsOpts = opts.plugins || [];
 
-                let processed = postcss([autoprefixer, flexBubFixes]).process(css, postCssOpts).css;
+
+
+                let processed = postcss([
+                    autoprefixer({
+                        flexbox: true,
+                        overrideBrowserslist: opts.browsers && opts.browsers
+                    }),
+                    flexBubFixes()
+                ]).process(css, postCssOpts).css;
+
                 processed = customMinifyCSS(processed);
 
 
